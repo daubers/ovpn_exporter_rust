@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   Explore-Gitea-Actions:
-    runs-on: ubuntu-latest
+    runs-on: pi-ubuntu-latest
     steps:
       - run: curl https://sh.rustup.rs -sSf | sh -s -- -y
       - name: Check out repository code
