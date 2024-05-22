@@ -9,7 +9,6 @@ jobs:
       - run: curl https://sh.rustup.rs -sSf | sh -s -- -y
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: cd ${{ gitea.repository }}
       - run: cargo build
       - name: List files in the repository
         run: |
