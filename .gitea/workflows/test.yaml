@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v3
       - run: |
           source "$HOME/.cargo/env"
+          cd status_exporter
           cargo build
       - name: List files in the repository
         run: |
