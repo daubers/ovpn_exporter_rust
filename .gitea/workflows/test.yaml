@@ -7,10 +7,11 @@ jobs:
     runs-on: pi-ubuntu-latest
     steps:
       - run: curl https://sh.rustup.rs -sSf | sh -s -- -y
-      - run: source "$HOME/.cargo/env"
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: cargo build
+      - run: |
+          source "$HOME/.cargo/env"
+          cargo build
       - name: List files in the repository
         run: |
           ls ${{ gitea.workspace }}
