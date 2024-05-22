@@ -1,0 +1,17 @@
+name: Gitea Cargo Test
+run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
+on: [push]
+
+jobs:
+  Explore-Gitea-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl https://sh.rustup.rs -sSf | sh -s -- -y
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: cd ${{ gitea.repository }}
+      - run: cargo build
+      - name: List files in the repository
+        run: |
+          ls ${{ gitea.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
