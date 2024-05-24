@@ -19,8 +19,8 @@ jobs:
           apt update && apt install -y golang
       - name: Use Go Action
         id: use-go-action
-        uses: https://gitea.com/actions/release-action@main
+        uses: akkuman/gitea-release-action@v1
         with:
           files: |-
             target/release/*.tar.gz
-          api_key: '${{secrets.CARGO_API}}'
+          token: '${{secrets.CARGO_API}}'
