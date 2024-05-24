@@ -15,6 +15,8 @@ jobs:
           cargo build --release
           cd target/release
           tar cvf "`./status_exporter --version`.tar.gz" status_exporter
+      - run: |
+          apt update && apt install golang
       - name: Use Go Action
         id: use-go-action
         uses: https://gitea.com/actions/release-action@main
