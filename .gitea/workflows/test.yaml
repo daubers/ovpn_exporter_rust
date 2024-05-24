@@ -22,5 +22,5 @@ jobs:
         uses: akkuman/gitea-release-action@v1
         with:
           files: |-
-            target/release/*.tar.gz
+            status_exporter/target/release/*.tar.gz
           token: '${{secrets.CARGO_API}}'
