@@ -12,8 +12,13 @@ jobs:
       - run: |
           source "$HOME/.cargo/env"
           cd status_exporter
-          cargo build
-      - name: List files in the repository
-        run: |
-          ls ${{ gitea.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          cargo build --release
+          cd target/release
+          tar cvf "`./status_exporter --version`.tar.gz" status_exporter
+      - name: Use Go Action
+        id: use-go-action
+        uses: actions/release-action@main
+        with:
+          files: |-
+            target/release/*.tar.gz
+          api_key: '${{secrets.CARGO_API}}'
