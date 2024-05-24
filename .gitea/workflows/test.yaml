@@ -17,7 +17,7 @@ jobs:
           tar cvf "`./status_exporter --version`.tar.gz" status_exporter
       - name: Use Go Action
         id: use-go-action
-        uses: actions/release-action@main
+        uses: https://gitea.com/actions/release-action@main
         with:
           files: |-
             target/release/*.tar.gz
