@@ -1,6 +1,9 @@
 name: Gitea Cargo Test
 run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
-on: [push]
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   Explore-Gitea-Actions:
