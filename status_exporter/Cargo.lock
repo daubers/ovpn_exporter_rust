@@ -367,6 +367,7 @@ dependencies = [
  "clap",
  "clap_derive",
  "clokwerk",
+ "lazy_static",
  "ovpn-status-lib",
  "prometheus",
 ]

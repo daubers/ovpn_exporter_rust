@@ -7,14 +7,14 @@ use chrono::NaiveDateTime;
 
 #[derive(Debug)]
 pub struct Client {
-    common_name: String,
+    pub common_name: String,
     real_address: SocketAddr,
-    virtual_address: IpAddr,
+    pub virtual_address: IpAddr,
     virtual_address_ipv6: Option<IpAddr>,
-    bytes_received: u64,
-    bytes_sent: u64,
+    pub bytes_received: u64,
+    pub bytes_sent: u64,
     connected_since: NaiveDateTime,
-    connected_since_time_t: u64,
+    pub connected_since_time_t: u64,
     username: String,
     client_id: u32,
     peer_id: u32,
@@ -39,7 +39,7 @@ pub struct Title {
 
 pub struct Status {
     pub snapshot_time: Option<SnapshotTime>,
-    client_list: Vec<Client>,
+    pub client_list: Vec<Client>,
     routing_table: Vec<Route>,
     title: Option<Title>
 }
